@@ -1,0 +1,8 @@
+<div class="bg-gray-400 p-5 m-auto my-5 center flex flex-col w-[50%] border-black rounded-md ">
+  <h2 class="text-bold text-3xl text-center"> {{title}} </h2>
+  <p>Créé le {{createdAt}} </p>
+  <p> {{description}} </p>
+  <img [src]="imageURL" [alt]="title" class="rounded-sm" >
+  <p> Nombre de membres actuels : {{snaps}} </p>
+  <button class="bg-blue-600 m-auto p-1 rounded-lg " (click)="onAddSnap()">Oh Snap!</button>
+</div>
