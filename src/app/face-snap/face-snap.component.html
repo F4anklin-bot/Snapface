@@ -1,8 +1,8 @@
 <div class="bg-gray-400 p-5 m-auto my-5 center flex flex-col w-[50%] border-black rounded-md ">
-  <h2 class="text-bold text-3xl text-center"> {{title}} </h2>
-  <p>Créé le {{createdAt}} </p>
-  <p> {{description}} </p>
-  <img [src]="imageURL" [alt]="title" class="rounded-sm" >
-  <p class="mb-2"> Like : {{snaps}} </p>
+  <h2 class="text-bold text-3xl text-center"> {{faceSnap.title}} </h2>
+  <p>Créé le {{faceSnap.createdAt}} </p>
+  <p> {{faceSnap.description}} </p>
+  <img [src]="faceSnap.imageURL" [alt]="faceSnap.title" class="rounded-sm" >
+  <p class="mb-2"> Like : {{faceSnap.snaps}} </p>
   <button class="bg-blue-600 m-auto p-1 rounded-lg " (click)="onSnap()">{{snapButtonText}}</button>
 </div>
