@@ -11,17 +11,29 @@ export class FaceSnapComponent {
   description!: string;
   createdAt!: Date;
   snaps!: number;
-  imageURL!: string
+  imageURL!: string;
+  snapButtonText!: string;
+  userHasSnapped!: boolean;
 
   ngOnInit(): void {
     this.title= "Overgeared";
     this.description="La guilde de Grid le forgeron légendaire !";
     this.createdAt= new Date();
-    this.snaps = 1;
-    this.imageURL = "https://imgs.search.brave.com/_hA1XdhwlBARIKwGAKj3E5vxKfiDZPSh-Sfwd6jB9kk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk1UTmpOR1U0/TlRVdFltVmpNeTAw/WWpSaUxUa3hNV1V0/Tnpaa01ETmlZalpo/Tm1WaVhrRXlYa0Zx/Y0djQC5qcGc"
+    this.snaps = 0;
+    this.imageURL = "https://imgs.search.brave.com/zze_3PTfNgXR1VTMKfxR9_WiBPvmt85HMTZJdU2F1tQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxajJWakg3alNM/LmpwZw"
+    this.snapButtonText = "Like";
+    this.userHasSnapped =false;
   }
 
-  onAddSnap(){
-    this.snaps++;
+  onSnap(): void {
+    if (this.userHasSnapped) {
+      this.snaps--;
+      this.snapButtonText="Like";
+      this.userHasSnapped=false;
+    } else {
+      this.snaps++;
+      this.snapButtonText="Dislike";
+      this.userHasSnapped=true;
+    }
   }
 }

@@ -3,6 +3,6 @@
   <p>Créé le {{createdAt}} </p>
   <p> {{description}} </p>
   <img [src]="imageURL" [alt]="title" class="rounded-sm" >
-  <p> Nombre de membres actuels : {{snaps}} </p>
-  <button class="bg-blue-600 m-auto p-1 rounded-lg " (click)="onAddSnap()">Oh Snap!</button>
+  <p class="mb-2"> Like : {{snaps}} </p>
+  <button class="bg-blue-600 m-auto p-1 rounded-lg " (click)="onSnap()">{{snapButtonText}}</button>
 </div>
